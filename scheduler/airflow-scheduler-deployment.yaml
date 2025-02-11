@@ -27,7 +27,7 @@ spec:
         - name: AIRFLOW__CORE__SQL_ALCHEMY_CONN
           value: postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
         - name: AIRFLOW__CORE__FERNET_KEY
-          value: "iFCzUgPTLB1TNb9Zq4ZXxnBlHVaCGFLv55BtlTOjnfw="
+          value: "<TOKEN>"
         - name: AIRFLOW__CORE__LOAD_EXAMPLES
           value: "false"
         - name: AIRFLOW__WEBSERVER__RBAC

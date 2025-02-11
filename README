@@ -1,6 +1,23 @@
-# in order to install airflow
+How to install airflow on openshift
 
-# 1. Loging to openshift
+1. Loging to openshift
 oc logic -u <USER> -p <PASSWORD> <OPENSHIFT_HOST>
 
-# 2. Execute 'oc apply -f <YAML_FILE>' for each yaml
+2. Generate token for airflow configs
+	2.1 Create VM
+
+	2.2 Execute commands:
+		sudo apt update
+		sudo apt install -y python3
+		sudo apt install -y python3-pip
+		pip3 install cryptography
+		python3 python_tools/generate_key.py
+		<TOKEN>
+
+	2.3 Replace <TOKEN> in yaml configs where it presents:
+		scheduler/airflow-scheduler-deployment.yaml
+		webserver/airflow-webserver-deployment.yaml
+		celery/celery-deployment.yaml
+		celery/statefulset/celery-statefulset.yaml
+
+3. Execute 'oc apply -f <YAML_FILE>' for each yaml

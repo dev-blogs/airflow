@@ -27,7 +27,7 @@ spec:
         - name: AIRFLOW__CORE__EXECUTOR
           value: CeleryExecutor
         - name: AIRFLOW__CORE__FERNET_KEY
-          value: "iFCzUgPTLB1TNb9Zq4ZXxnBlHVaCGFLv55BtlTOjnfw="
+          value: "<TOKEN>"
         volumeMounts:
         - name: airflow-dags
           mountPath: /opt/airflow/dags
