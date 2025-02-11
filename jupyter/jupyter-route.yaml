@@ -1,0 +1,10 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: jupyterlab
+spec:
+  to:
+    kind: Service
+    name: jupyterlab
+  port:
+    targetPort: 8888
