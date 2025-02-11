@@ -15,9 +15,9 @@ oc logic -u <USER> -p <PASSWORD> <OPENSHIFT_HOST>
 		<TOKEN>
 
 	2.3 Replace <TOKEN> in yaml configs where it presents:
-		scheduler/airflow-scheduler-deployment.yaml
-		webserver/airflow-webserver-deployment.yaml
-		celery/celery-deployment.yaml
-		celery/statefulset/celery-statefulset.yaml
+		* scheduler/airflow-scheduler-deployment.yaml
+		* webserver/airflow-webserver-deployment.yaml
+		* celery/celery-deployment.yaml
+		* celery/statefulset/celery-statefulset.yaml
 
 3. Execute 'oc apply -f <YAML_FILE>' for each yaml
