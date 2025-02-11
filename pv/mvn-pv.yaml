@@ -3,7 +3,7 @@ kind: PersistentVolume
 metadata:
   name: mvn-pv
   labels:
-    storage-class: hostpath
+    storage-class: mvnpath
 spec:
   capacity:
     storage: 5Gi
