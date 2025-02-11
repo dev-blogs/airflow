@@ -21,3 +21,11 @@ oc logic -u <USER> -p <PASSWORD> <OPENSHIFT_HOST>
 		* celery/statefulset/celery-statefulset.yaml
 
 3. Execute 'oc apply -f <YAML_FILE>' for each yaml
+Sequential of installing
+1. pv
+2. pvc
+3. postgress
+4. scheduler
+5. webserver
+6. redis
+7. celery
