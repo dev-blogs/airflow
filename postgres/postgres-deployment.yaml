@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: DeploymentConfig
+metadata:
+  name: postgres
+spec:
+  replicas: 1
+  selector:
+    app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+      - name: postgres
+        image: postgres:12.13
+        env:
+        - name: POSTGRES_USER
+          value: airflow
+        - name: POSTGRES_PASSWORD
+          value: airflow
+        - name: POSTGRES_DB
+          value: airflow
+        ports:
+        - containerPort: 5432
+        volumeMounts:
+        - mountPath: /var/lib/postgresql/data
+          name: postgres-data
+        securityContext:
+          runAsUser: 0
+          fsGroup: 0
+      volumes:
+      - name: postgres-data
+        persistentVolumeClaim:
+          claimName: postgres-pvc
