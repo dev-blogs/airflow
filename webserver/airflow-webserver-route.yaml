@@ -1,0 +1,10 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: airflow-webserver
+spec:
+  to:
+    kind: Service
+    name: airflow-webserver
+  port:
+    targetPort: 8080
