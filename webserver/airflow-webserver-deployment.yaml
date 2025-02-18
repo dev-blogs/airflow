@@ -11,6 +11,7 @@ spec:
       labels:
         app: airflow-webserver
     spec:
+      serviceAccountName: airflow-ca
       containers:
       - name: airflow-webserver
         image: apache/airflow:2.5.3rc2-python3.7

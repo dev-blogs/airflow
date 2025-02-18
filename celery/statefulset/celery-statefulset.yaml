@@ -13,6 +13,7 @@ spec:
       labels:
         app: celery
     spec:
+      serviceAccountName: airflow-ca
       containers:
       - name: celery
         image: apache/airflow:2.5.3rc2-python3.7

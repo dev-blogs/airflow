@@ -11,6 +11,7 @@ spec:
       labels:
         app: airflow-scheduler
     spec:
+      serviceAccountName: airflow-ca
       containers:
       - name: airflow-scheduler
         image: apache/airflow:2.5.3rc2-python3.7
@@ -27,7 +28,7 @@ spec:
         - name: AIRFLOW__CORE__SQL_ALCHEMY_CONN
           value: postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
         - name: AIRFLOW__CORE__FERNET_KEY
-          value: "<TOKEN>"
+          value: "iFCzUgPTLB1TNb9Zq4ZXxnBlHVaCGFLv55BtlTOjnfw="
         - name: AIRFLOW__CORE__LOAD_EXAMPLES
           value: "false"
         - name: AIRFLOW__WEBSERVER__RBAC
