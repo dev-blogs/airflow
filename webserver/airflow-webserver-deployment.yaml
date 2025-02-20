@@ -29,11 +29,11 @@ spec:
         - name: AIRFLOW__CELERY__WORKER_LOG_SERVER_PORT
           value: "8793"
         - name: AIRFLOW__WEBSERVER__SECRET_KEY
-          value: "<TOKEN>"
+          value: "<SECRET_KEY>"
         - name: AIRFLOW__CORE__SQL_ALCHEMY_CONN
           value: postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
         - name: AIRFLOW__CORE__FERNET_KEY
-          value: "<TOKEN>"
+          value: "<SECRET_KEY>"
         - name: AIRFLOW__CORE__LOAD_EXAMPLES
           value: "false"
         - name: AIRFLOW__WEBSERVER__RBAC

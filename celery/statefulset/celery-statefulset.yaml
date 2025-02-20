@@ -17,7 +17,7 @@ spec:
       containers:
       - name: celery
         image: apache/airflow:2.5.3rc2-python3.7
-        command: ["celery", "-A", "airflow.executors.celery_executor", "worker", "-Q", "default", "--loglevel=info", "--concurrency=2"]
+        command: ["airflow", "celery", "worker", "--concurrency", "2"]
         env:
         - name: AIRFLOW__CELERY__BROKER_URL
           value: redis://redis:6379/0
@@ -28,16 +28,20 @@ spec:
         - name: AIRFLOW__CORE__EXECUTOR
           value: CeleryExecutor
         - name: AIRFLOW__CORE__FERNET_KEY
-          value: "<TOKEN>"
+          value: "<SECRET_KEY>"
+        - name: AIRFLOW__WEBSERVER__SECRET_KEY
+          value: "<SECRET_KEY>"
+        - name: AIRFLOW__CORE__LOG_RETENTION_DAYS
+          value: "5"
         volumeMounts:
         - name: airflow-dags
           mountPath: /opt/airflow/dags
         resources:
           requests:
-            memory: "256Mi"
-            cpu: "256m"
-          limits:
             memory: "512Mi"
+            cpu: "250m"
+          limits:
+            memory: "1024Mi"
             cpu: "500m"
       restartPolicy: Always
       volumes:
