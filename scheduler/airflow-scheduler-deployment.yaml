@@ -23,8 +23,6 @@ spec:
           value: redis://redis:6379/0
         - name: AIRFLOW__CELERY__RESULT_BACKEND
           value: redis://redis:6379/0
-        - name: AIRFLOW__CELERY__WORKER_LOG_SERVER_PORT
-          value: "8793"
         - name: AIRFLOW__CORE__SQL_ALCHEMY_CONN
           value: postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
         - name: AIRFLOW__WEBSERVER__SECRET_KEY
